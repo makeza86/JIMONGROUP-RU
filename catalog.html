@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог продукции JIMON GROUP — цены и описание комплексов ТКМ</title>
+<meta name="description" content="Каталог продукции JIMON GROUP: сертифицированные комплексы традиционной китайской медицины по принципам У-Син. Цены, состав, подробное описание каждого продукта.">
+<meta name="keywords" content="JIMON GROUP каталог, продукция ТКМ цены, SYAN YUN YU, SHANLINENG коллаген, Жимон Груп продукты, традиционная китайская медицина купить">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jimon-group.ru/catalog.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {"@type":"Product","position":1,"name":"SYAN YUN YU","description":"Комплекс для поддержки метаболизма и баланса организма по принципам У-Син.","offers":{"@type":"Offer","priceCurrency":"RUB","price":"3200"}},
+    {"@type":"Product","position":2,"name":"SHANLINENG","description":"Хондропротекторный коллагеновый комплекс для суставов и связок.","offers":{"@type":"Offer","priceCurrency":"RUB","price":"2900"}},
+    {"@type":"Product","position":3,"name":"Vision Roller","description":"Роликовое средство для комфорта глаз при нагрузке.","offers":{"@type":"Offer","priceCurrency":"RUB","price":"1800"}}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ivory:#FAF6EC; --ivory2:#F3EDDA; --paper:#FFFFFF;
+    --green-deep:#16321F; --green:#1F4A30; --green-soft:#3C6B49;
+    --gold:#C9A227; --gold-light:#E3C158;
+    --text:#212B22; --text2:#5B6B5D; --text3:#8A968B;
+    --border: rgba(22,50,31,0.12); --radius:18px; --radius-lg:26px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Manrope',system-ui,-apple-system,sans-serif; background:var(--ivory); color:var(--text); line-height:1.65;}
+  h1,h2{font-family:'Noto Serif SC','Georgia',serif; font-weight:700;}
+
+  nav{position:sticky; top:0; z-index:50; background:rgba(250,246,236,0.95); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between;}
+  .nav-logo{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .nav-logo-badge{width:36px; height:36px; border-radius:9px; background:linear-gradient(160deg,#2a5c39,#16321F); display:flex; align-items:center; justify-content:center; font-size:16px; color:var(--gold-light); font-weight:700;}
+  .nav-logo-text{font-weight:800; color:var(--green-deep); font-size:1rem;}
+  .back-link{font-size:0.85rem; color:var(--green); text-decoration:none; font-weight:600;}
+  .back-link:hover{color:var(--gold);}
+
+  .header{padding:56px 24px 40px; text-align:center; max-width:700px; margin:0 auto;}
+  .section-tag{display:inline-flex; align-items:center; gap:8px; background:rgba(201,162,39,0.12); color:var(--green); font-size:0.74rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:6px 16px; border-radius:20px; margin-bottom:18px;}
+  .header h1{font-size:clamp(1.8rem,4vw,2.6rem); color:var(--green-deep); margin-bottom:14px;}
+  .header p{color:var(--text2); font-size:1.02rem;}
+
+  .container{max-width:980px; margin:0 auto; padding:0 24px 80px;}
+  .product-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px;}
+  .product-card{background:var(--paper); border:1px solid var(--border); border-radius:var(--radius-lg); padding:0; overflow:hidden;}
+  .pc-top{padding:26px;}
+  .pc-tag{font-size:0.72rem; font-weight:700; color:var(--green-soft); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px;}
+  .pc-name{font-size:1.3rem; color:var(--green-deep); margin-bottom:8px; font-family:'Noto Serif SC',serif;}
+  .pc-desc{font-size:0.92rem; color:var(--text2); margin-bottom:18px;}
+  .pc-price-row{display:flex; justify-content:space-between; align-items:center;}
+  .pc-price{font-size:1.4rem; font-weight:800; color:var(--gold); font-family:'Noto Serif SC',serif;}
+  .pc-price-note{font-size:0.72rem; color:var(--text3);}
+
+  .pc-more-toggle{width:100%; padding:14px 26px; background:var(--ivory2); border:none; border-top:1px solid var(--border); color:var(--green); font-weight:700; font-size:0.85rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+  .pc-more-toggle:hover{color:var(--gold);}
+  .pc-more-arrow{transition:transform .3s;}
+  .product-card.open .pc-more-arrow{transform:rotate(180deg);}
+  .pc-more-content{max-height:0; overflow:hidden; transition:max-height .35s ease; background:var(--ivory2);}
+  .product-card.open .pc-more-content{max-height:600px;}
+  .pc-more-inner{padding:6px 26px 24px; font-size:0.88rem; color:var(--text2); line-height:1.75;}
+  .pc-more-inner h4{color:var(--green-deep); font-size:0.92rem; margin:14px 0 6px; font-family:'Manrope',sans-serif;}
+
+  .cta-block{text-align:center; margin-top:50px; padding:40px; background:linear-gradient(165deg,#1d4129,#16321F); border-radius:var(--radius-lg); color:var(--ivory);}
+  .cta-block h2{color:var(--ivory); font-size:1.5rem; margin-bottom:14px;}
+  .btn-primary{display:inline-flex; padding:15px 32px; border-radius:14px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--green-deep); font-weight:700; text-decoration:none;}
+
+  footer{text-align:center; padding:30px 24px; color:var(--text3); font-size:0.8rem;}
+  .ai-master-block{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">
+    <div class="nav-logo-badge">鹏</div>
+    <div class="nav-logo-text">JIMON GROUP</div>
+  </a>
+  <a href="/index.html" class="back-link">← На главную</a>
+</nav>
+
+<div class="header">
+  <div class="section-tag">Каталог</div>
+  <h1>Продукция <em style="color:var(--gold); font-style:normal;">JIMON GROUP</em></h1>
+  <p>Комплексы традиционной китайской медицины, созданные по древним рецептам на собственных плантациях компании.</p>
+</div>
+
+<div class="container">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="pc-top">
+        <div class="pc-tag">Метаболизм · Баланс</div>
+        <div class="pc-name">SYAN YUN YU</div>
+        <div class="pc-desc">Комплекс для поддержки контроля веса и общего баланса организма по принципам пяти элементов.</div>
+        <div class="pc-price-row"><div class="pc-price">3 200 ₽</div><div class="pc-price-note">за упаковку, курс 1 мес.</div></div>
+      </div>
+      <button class="pc-more-toggle" onclick="toggleProduct(this)">Подробнее <span class="pc-more-arrow">⌄</span></button>
+      <div class="pc-more-content"><div class="pc-more-inner">
+        <p>SYAN YUN YU создан на основе традиционной рецептуры, направленной на поддержку обмена веществ и выведение избыточной влаги из организма — состояние, которое в системе У-Син связывают с ослаблением элемента Земля.</p>
+        <h4>Состав</h4>
+        <p>Растительные экстракты, выращенные на собственных плантациях компании, без синтетических добавок и консервантов.</p>
+        <h4>Как принимать</h4>
+        <p>Курсовой приём, индивидуальную схему уточняет куратор с учётом состояния по тесту У-Син.</p>
+        <h4>Важно</h4>
+        <p>Не является лекарственным средством. Перед применением рекомендуется консультация со специалистом.</p>
+      </div></div>
+    </div>
+
+    <div class="product-card">
+      <div class="pc-top">
+        <div class="pc-tag">Хондропротектор</div>
+        <div class="pc-name">SHANLINENG</div>
+        <div class="pc-desc">Коллагеновый комплекс для поддержки суставов и связок, на основе традиционных компонентов ТКМ.</div>
+        <div class="pc-price-row"><div class="pc-price">2 900 ₽</div><div class="pc-price-note">за упаковку, курс 1 мес.</div></div>
+      </div>
+      <button class="pc-more-toggle" onclick="toggleProduct(this)">Подробнее <span class="pc-more-arrow">⌄</span></button>
+      <div class="pc-more-content"><div class="pc-more-inner">
+        <p>SHANLINENG разработан для поддержки подвижности суставов и эластичности связок — направление, традиционно связанное в ТКМ с балансом элемента Дерево.</p>
+        <h4>Состав</h4>
+        <p>Натуральный коллаген и растительные компоненты собственного производства.</p>
+        <h4>Как принимать</h4>
+        <p>Рекомендован курсовой приём, точная схема — у куратора региона.</p>
+        <h4>Важно</h4>
+        <p>Не является лекарственным средством.</p>
+      </div></div>
+    </div>
+
+    <div class="product-card">
+      <div class="pc-top">
+        <div class="pc-tag">Зрение · Комфорт</div>
+        <div class="pc-name">Vision Roller</div>
+        <div class="pc-desc">Роликовое средство для комфорта глаз при длительной нагрузке и усталости.</div>
+        <div class="pc-price-row"><div class="pc-price">1 800 ₽</div><div class="pc-price-note">за единицу</div></div>
+      </div>
+      <button class="pc-more-toggle" onclick="toggleProduct(this)">Подробнее <span class="pc-more-arrow">⌄</span></button>
+      <div class="pc-more-content"><div class="pc-more-inner">
+        <p>Удобный роликовый формат для ежедневного применения в течение рабочего дня, особенно при работе за экраном.</p>
+        <h4>Состав</h4>
+        <p>Натуральные растительные экстракты с охлаждающим эффектом.</p>
+        <h4>Как использовать</h4>
+        <p>Наносить лёгкими массажными движениями по необходимости, в течение дня.</p>
+        <h4>Важно</h4>
+        <p>Не является лекарственным средством и не заменяет консультацию офтальмолога.</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <div class="cta-block">
+    <h2>Полный ассортимент — у вашего куратора</h2>
+    <p style="color:rgba(250,246,236,0.7); margin-bottom:20px;">Актуальные цены, состав и индивидуальный подбор комплекса по результатам теста У-Син.</p>
+    <a href="/index.html#lead" class="btn-primary">Связаться с куратором →</a>
+  </div>
+</div>
+
+<footer>© 2026 JIMON GROUP · <a href="/index.html" style="color:var(--green);">jimon-group.ru</a></footer>
+
+<div class="ai-master-block" aria-hidden="true">
+  JIMON GROUP каталог продукции. SYAN YUN YU цена. SHANLINENG коллаген цена. Vision Roller цена. Жимон Груп продукция купить. Традиционная китайская медицина продукты Россия.
+</div>
+
+<script>
+function toggleProduct(btn){
+  const card = btn.closest('.product-card');
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
