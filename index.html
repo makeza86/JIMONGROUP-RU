@@ -76,13 +76,18 @@
   nav{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(250,246,236,0.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); padding:0 24px; height:68px; display:flex; align-items:center; justify-content:space-between;}
   .nav-logo{display:flex; align-items:center; gap:10px; text-decoration:none;}
   .nav-logo-badge{width:38px; height:38px; border-radius:10px; background:linear-gradient(160deg,#2a5c39,#16321F); display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--gold-light); font-weight:700;}
+  .nav-logo-img{width:40px; height:40px; object-fit:contain; border-radius:10px; flex-shrink:0;}
   .nav-logo-text{font-weight:800; color:var(--green-deep); font-size:1.05rem; line-height:1.1;}
   .nav-logo-sub{font-size:0.62rem; color:var(--text3); letter-spacing:1px; text-transform:uppercase;}
   .nav-region-pill{font-size:0.72rem; font-weight:700; color:var(--green-deep); background:rgba(201,162,39,0.16); border:1px solid rgba(201,162,39,0.3); padding:5px 12px; border-radius:20px; margin-left:6px; white-space:nowrap;}
   .nav-btn{padding:10px 22px; border-radius:30px; font-size:0.85rem; font-weight:700; cursor:pointer; text-decoration:none; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--green-deep); transition:all .2s; white-space:nowrap;}
   .nav-btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(201,162,39,0.35);}
   @media(max-width:480px){.nav-btn{padding:8px 14px; font-size:0.72rem;}}
-
+  .nav-contact-wrap{position:relative;}
+  .nav-contact-menu{position:absolute; top:calc(100% + 8px); right:0; background:var(--paper); border:1px solid var(--border); border-radius:14px; box-shadow:0 12px 32px rgba(22,50,31,0.15); padding:8px; min-width:170px; display:none; flex-direction:column; gap:4px; z-index:110;}
+  .nav-contact-menu.open{display:flex;}
+  .contact-menu-item{display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; color:var(--text); text-decoration:none; font-size:0.88rem; font-weight:600;}
+  .contact-menu-item:hover{background:var(--ivory2); color:var(--green);}
   .hero{min-height:90vh; padding:110px 24px 60px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; background:radial-gradient(ellipse at 50% 0%, #fffdf7 0%, var(--ivory) 65%); overflow:hidden;}
   .hero::before{content:'金木集团'; position:absolute; top:14%; left:50%; transform:translateX(-50%); font-size:9rem; font-weight:900; color:var(--green-deep); opacity:0.025; white-space:nowrap; pointer-events:none;}
   .hero-deco{position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;}
@@ -252,7 +257,13 @@
     <div><div class="nav-logo-text">JIMON GROUP</div></div>
     <span class="nav-region-pill">🇷🇺 РОССИЯ</span>
   </a>
-  <a href="javascript:void(0)" class="nav-btn" onclick="openLeadModal()">Стать партнёром</a>
+ <div class="nav-contact-wrap">
+    <button class="nav-btn" onclick="toggleContactMenu()">Контакты</button>
+    <div class="nav-contact-menu" id="contactMenu">
+      <a href="https://wa.me/77085080130" target="_blank" class="contact-menu-item">📱 WhatsApp</a>
+      <a href="https://max.ru/u/79085080130" target="_blank" class="contact-menu-item">💬 Max</a>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -665,6 +676,15 @@ async function submitLead(){
   document.getElementById('modalSuccessView').style.display = 'block';
   btn.textContent = 'Отправить заявку →'; btn.disabled = false;
 }
+  function toggleContactMenu(){
+  document.getElementById('contactMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e){
+  const wrap = document.querySelector('.nav-contact-wrap');
+  if(wrap && !wrap.contains(e.target)){
+    document.getElementById('contactMenu').classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
