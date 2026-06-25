@@ -574,10 +574,11 @@ const CONFIG = {
   region: "Россия",
   leadSource: "jimon-group.ru",
   socials: [
-    { label:"TikTok", url:"https://www.tiktok.com/@jimon.gramm" },
-    { label:"Instagram", url:"https://www.instagram.com/jimon.kz/" },
-    { label:"YouTube", url:"https://www.youtube.com/@jimongramm.health" },
-    { label:"WhatsApp", url:"https://wa.me/77085080130" }
+    { label:"TikTok", url:"https://www.tiktok.com/@jimongroup.ai" },
+    { label: "Instagram", url: "https://www.instagram.com/jimongroup.gramm" },
+    { label:"YouTube", url:"https://www.youtube.com/@jimongroup_gramm" },
+    { label:"WhatsApp", url:"https://wa.me/77085080130" },
+    { label:"JimonGramm", url:"https://jimongramm.com" }
   ]
 };
 document.getElementById('footerSocials').innerHTML = CONFIG.socials.map(s=>`<a href="${s.url}" target="_blank" class="footer-social">${s.label}</a>`).join('');
