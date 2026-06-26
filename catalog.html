@@ -123,8 +123,11 @@
     </div>
     <div class="peng-modal-messages" id="pengModalMessages"></div>
     <div class="peng-modal-cta" id="pengModalCta">
-      <a href="/index.html#lead" class="btn-primary">Стать партнёром →</a>
-    </div>
+  <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+    <a href="/index.html?interest=client#lead" class="btn-primary" style="margin-top:0;">Стать клиентом →</a>
+    <a href="/index.html?interest=partner#lead" class="btn-primary" style="margin-top:0; background:transparent; color:var(--gold-light); border:2px solid var(--gold);">Стать партнёром →</a>
+  </div>
+</div>
     <div class="peng-modal-input-row" id="pengModalInputRow">
       <input type="text" id="pengModalInput" placeholder="Спросите про этот товар..." onkeypress="if(event.key==='Enter') sendCatalogPeng()">
       <button onclick="sendCatalogPeng()">→</button>
