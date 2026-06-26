@@ -655,7 +655,9 @@ function checkCustomMethod(){
   const method = document.getElementById('m-method').value;
   document.getElementById('m-method-custom').style.display = (method === 'Другой') ? 'block' : 'none';
 }
-function openLeadModal(){
+let leadButtonSource = 'Не указан';
+function openLeadModal(buttonLabel){
+  leadButtonSource = buttonLabel || 'Не указан';
   document.getElementById('leadModal').classList.add('open');
   document.getElementById('modalFormView').style.display = 'block';
   document.getElementById('modalSuccessView').style.display = 'none';
@@ -689,7 +691,7 @@ async function submitLead(){
   try{
     await fetch('https://jimongramm.com/api/landing-lead',{
       method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ name, city, contact, contactMethod:method, country, source:CONFIG.leadSource })
+      body: JSON.stringify({ name, city, contact, contactMethod:method, country, source: CONFIG.leadSource + ' — ' + leadButtonSource })
     });
   }catch(e){}
   document.getElementById('modalFormView').style.display = 'none';
