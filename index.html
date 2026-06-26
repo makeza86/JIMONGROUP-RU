@@ -684,6 +684,7 @@ function openLeadModal(buttonLabel){
 }
   if (new URLSearchParams(window.location.search).get('openModal') === '1') {
   openLeadModal('Страница технологии');
+  window.history.replaceState({}, '', '/index.html');
 }
 function closeLeadModal(){
   document.getElementById('leadModal').classList.remove('open');
