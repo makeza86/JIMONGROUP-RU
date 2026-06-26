@@ -666,6 +666,13 @@ function openLeadModal(buttonLabel){
   document.getElementById('modalFormView').style.display = 'block';
   document.getElementById('modalSuccessView').style.display = 'none';
 }
+  let catalogInterestLabel = '';
+const urlInterestParam = new URLSearchParams(window.location.search).get('interest');
+if (urlInterestParam === 'client' || urlInterestParam === 'partner') {
+  catalogInterestLabel = urlInterestParam === 'client' ? 'каталог-клиент' : 'каталог-партнёр';
+  openLeadModal('Каталог');
+  window.history.replaceState({}, '', '/index.html');
+}
   if (new URLSearchParams(window.location.search).get('openModal') === '1') {
   openLeadModal('Страница технологии');
   window.history.replaceState({}, '', '/index.html');
@@ -676,8 +683,7 @@ function closeLeadModal(){
 document.getElementById('leadModal').addEventListener('click', (e)=>{ if(e.target.id === 'leadModal') closeLeadModal(); });
 
 async function submitLead(){
-  const urlInterest = new URLSearchParams(window.location.search).get('interest');
-  const interestLabel = urlInterest === 'client' ? 'каталог-клиент' : (urlInterest === 'partner' ? 'каталог-партнёр' : '');
+ const interestLabel = catalogInterestLabel;
   let country = document.getElementById('m-country').value;
   if(country === 'Другая') country = document.getElementById('m-country-custom').value.trim() || country;
 
