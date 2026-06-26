@@ -663,7 +663,7 @@ function openLeadModal(buttonLabel){
   document.getElementById('modalSuccessView').style.display = 'none';
 }
   if (new URLSearchParams(window.location.search).get('openModal') === '1') {
-  openLeadModal();
+  openLeadModal('Страница технологии');
 }
 function closeLeadModal(){
   document.getElementById('leadModal').classList.remove('open');
