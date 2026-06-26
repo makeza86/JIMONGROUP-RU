@@ -597,38 +597,22 @@ function showTyping(){ const t=document.createElement('div'); t.className='chat-
   chat.appendChild(t); chat.scrollTop=chat.scrollHeight; }
 function removeTyping(){ const t=document.getElementById('typing'); if(t) t.remove(); }
 
-addMsg('peng', 'Здравствуйте! 🌿 Я Пэн — ИИ-консультант по ТКМ. Расскажите, что вас беспокоит, и я помогу разобраться.');
-
-async function sendToPeng(){
-  const input = document.getElementById('pengRealInput');
-  const text = input.value.trim();
-  if(!text) return;
-  addMsg('user', text);
-  input.value = '';
-  input.disabled = true;
-  showTyping();
-  try{
-    const res = await fetch('https://jimongramm.com/api/landing-peng', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ message: text })
-    });
-    const data = await res.json();
-    removeTyping();
-    if(data.limitReached){
-      addMsg('peng', 'Это был ваш последний бесплатный вопрос на сегодня 🌿 Чтобы продолжить общение с Пэн без ограничений — станьте партнёром JimonGramm.');
-      document.getElementById('pengLimitBadge').textContent = 'Лимит на сегодня исчерпан';
-      setTimeout(()=>openLeadModal('Пэн на лендинге'), 1500);
-    } else {
-      addMsg('peng', data.reply || 'Извините, не получилось ответить.');
-      document.getElementById('pengLimitBadge').textContent = 'Бесплатных вопросов: ' + (data.remaining ?? '—');
-    }
-  } catch(e){
-    removeTyping();
-    addMsg('peng', 'Извините, произошла ошибка соединения. Попробуйте ещё раз.');
-  }
-  input.disabled = false;
-  input.focus();
+const scriptedDialog = [
+  { from:'user', text:'у меня вечная усталость, ничего не помогает' },
+  { from:'peng', text:'Понимаю вас 🌿 Часто это говорит об истощении энергии почек — основы жизненной силы в ТКМ. Бывает резкая чувствительность к холоду?' },
+  { from:'user', text:'да, постоянно мёрзну, даже летом!' },
+  { from:'peng', text:'Это важный сигнал 🎯 Похожий случай я разбирала с одной из наших партнёров — после индивидуального подбора эта мёрзлявость ушла за месяц. Хотите, чтобы я подобрала решение именно под вас?' },
+  { from:'user', text:'очень хочу, спасибо что так понятно объяснили! 🙏' },
+  { from:'peng', text:'Это моя работа и моя радость 💙 Присоединяйтесь к команде JimonGramm — и я с удовольствием продолжу с вами лично.' }
+];
+let scriptIndex = 0;
+function nextScriptMsg(){
+  if(scriptIndex >= scriptedDialog.length){ scriptIndex = 0; return; }
+  const msg = scriptedDialog[scriptIndex++];
+  if(msg.from === 'peng'){ showTyping(); setTimeout(()=>{ removeTyping(); addMsg('peng', msg.text); setTimeout(nextScriptMsg, 3500); }, 1800); }
+  else { addMsg('user', msg.text); setTimeout(nextScriptMsg, 1400); }
 }
+setTimeout(nextScriptMsg, 1400);
 
 function toggleFaq(el){
   const item=el.parentElement; const isOpen=item.classList.contains('open');
