@@ -30,14 +30,14 @@
   .container{max-width:1100px; margin:0 auto; padding:0 24px 70px;}
 
   .product-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px;}
-  .pcard{flex-shrink:0; background:var(--card-bg); border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+  .pcard{flex-shrink:0; background:var(--card-bg); border:1px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;}
   .pcard-img-wrap{width:100%; height:190px; overflow:hidden; background:#0a1810;}
   .pcard-img-wrap img{width:100%; height:190px; object-fit:cover; object-position:center;}
-  .pcard-body{padding:14px;}
+  .pcard-body{padding:14px; flex:1; display:flex; flex-direction:column;}
   .pcard-brand{font-size:13px; font-weight:700; color:var(--text); margin-bottom:3px; line-height:1.35;}
   .pcard-short{font-size:11px; color:var(--gold); margin-bottom:8px; font-weight:600; text-transform:uppercase; letter-spacing:0.3px;}
-  .pcard-hook{font-size:12px; color:var(--text2); margin-bottom:10px; line-height:1.5;}
-  .pcard-actions{display:flex; justify-content:space-between; align-items:center; margin-top:4px;}
+  .pcard-hook{font-size:12px; color:var(--text2); margin-bottom:10px; line-height:1.5; flex:1;}
+  .pcard-actions{display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:4px;}
   .pcard-more{font-size:11px; color:rgba(148,163,184,0.55); cursor:pointer; text-decoration:underline; text-decoration-color:rgba(148,163,184,0.3);}
   .pcard-more:hover{color:var(--gold);}
   .pcard-ask{font-size:11px; color:var(--gold-light); cursor:pointer; font-weight:700; background:rgba(212,168,76,0.1); border:1px solid rgba(212,168,76,0.25); border-radius:8px; padding:5px 10px;}
