@@ -376,9 +376,10 @@
         </div>
         <div class="chat-messages" id="chatMessages"></div>
         <div class="chat-input-row">
-          <div class="chat-input-fake">Расскажите, что вас беспокоит...</div>
-          <button class="chat-send-btn">→</button>
-       </div>
+  <input type="text" id="pengRealInput" class="chat-input-fake" placeholder="Расскажите, что вас беспокоит..." style="border:none; outline:none; font-family:inherit;" onkeypress="if(event.key==='Enter') sendToPeng()">
+  <button class="chat-send-btn" onclick="sendToPeng()">→</button>
+</div>
+<div id="pengLimitBadge" style="text-align:center; font-size:0.75rem; color:rgba(250,246,236,0.4); margin-top:8px;">Бесплатных вопросов: 3</div>
     </div>
 
     <div style="text-align:center; margin-top:36px;">
@@ -583,17 +584,10 @@ const CONFIG = {
 };
 document.getElementById('footerSocials').innerHTML = CONFIG.socials.map(s=>`<a href="${s.url}" target="_blank" class="footer-social">${s.label}</a>`).join('');
 
-const messages = [
-  { from:'user', text:'У меня постоянная усталость и плохой сон...' },
-  { from:'peng', text:'Понимаю вас 🌿 По системе У-Син это часто говорит об ослаблении энергии элемента Вода. Бывает ли у вас ощущение холода в ногах?' },
-  { from:'user', text:'Да, холодные ноги — это точно про меня!' },
-  { from:'peng', text:'Это важный сигнал 🎯 Я могу подобрать комплекс, работающий с балансом элемента Вода. Хотите пройти тест У-Син? Это бесплатно и займёт 3 минуты.' }
-];
-let msgIndex = 0;
 const chat = document.getElementById('chatMessages');
-function addMsg(msg){
-  const el = document.createElement('div'); el.className='chat-msg '+msg.from;
-  el.innerHTML = `<div class="chat-msg-label">${msg.from==='peng'?'Пэн':'Вы'}</div><div class="chat-bubble">${msg.text}</div>`;
+function addMsg(from, text){
+  const el = document.createElement('div'); el.className='chat-msg '+from;
+  el.innerHTML = `<div class="chat-msg-label">${from==='peng'?'Пэн':'Вы'}</div><div class="chat-bubble">${text}</div>`;
   el.style.cssText='opacity:0;transform:translateY(10px)';
   chat.appendChild(el); chat.scrollTop=chat.scrollHeight;
   setTimeout(()=>{el.style.cssText='transition:all .4s;opacity:1;transform:translateY(0)';},50);
@@ -602,13 +596,39 @@ function showTyping(){ const t=document.createElement('div'); t.className='chat-
   t.innerHTML='<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
   chat.appendChild(t); chat.scrollTop=chat.scrollHeight; }
 function removeTyping(){ const t=document.getElementById('typing'); if(t) t.remove(); }
-function nextMsg(){
-  if(msgIndex>=messages.length){msgIndex=0; return;}
-  const msg=messages[msgIndex++];
-  if(msg.from==='peng'){ showTyping(); setTimeout(()=>{removeTyping(); addMsg(msg); setTimeout(nextMsg,3500);},1800); }
-  else { addMsg(msg); setTimeout(nextMsg,1400); }
+
+addMsg('peng', 'Здравствуйте! 🌿 Я Пэн — ИИ-консультант по ТКМ. Расскажите, что вас беспокоит, и я помогу разобраться.');
+
+async function sendToPeng(){
+  const input = document.getElementById('pengRealInput');
+  const text = input.value.trim();
+  if(!text) return;
+  addMsg('user', text);
+  input.value = '';
+  input.disabled = true;
+  showTyping();
+  try{
+    const res = await fetch('https://jimongramm.com/api/landing-peng', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ message: text })
+    });
+    const data = await res.json();
+    removeTyping();
+    if(data.limitReached){
+      addMsg('peng', 'Это был ваш последний бесплатный вопрос на сегодня 🌿 Чтобы продолжить общение с Пэн без ограничений — станьте партнёром JimonGramm.');
+      document.getElementById('pengLimitBadge').textContent = 'Лимит на сегодня исчерпан';
+      setTimeout(()=>openLeadModal('Пэн на лендинге'), 1500);
+    } else {
+      addMsg('peng', data.reply || 'Извините, не получилось ответить.');
+      document.getElementById('pengLimitBadge').textContent = 'Бесплатных вопросов: ' + (data.remaining ?? '—');
+    }
+  } catch(e){
+    removeTyping();
+    addMsg('peng', 'Извините, произошла ошибка соединения. Попробуйте ещё раз.');
+  }
+  input.disabled = false;
+  input.focus();
 }
-setTimeout(nextMsg,1400);
 
 function toggleFaq(el){
   const item=el.parentElement; const isOpen=item.classList.contains('open');
