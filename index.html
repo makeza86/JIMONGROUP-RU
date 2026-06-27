@@ -763,8 +763,10 @@ function openLeadModal(buttonLabel){
 }
 let catalogInterestLabel = '';
 const urlInterestParam = new URLSearchParams(window.location.search).get('interest');
+const urlProductParam = new URLSearchParams(window.location.search).get('product');
 if (urlInterestParam === 'client' || urlInterestParam === 'partner') {
-  catalogInterestLabel = urlInterestParam === 'client' ? 'каталог-клиент' : 'каталог-партнёр';
+  const prefix = urlProductParam ? urlProductParam : 'каталог';
+  catalogInterestLabel = prefix + '-' + (urlInterestParam === 'client' ? 'клиент' : 'партнёр');
   openLeadModal('Каталог');
   window.history.replaceState({}, '', '/index.html');
 }
