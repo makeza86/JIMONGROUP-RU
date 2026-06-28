@@ -772,6 +772,7 @@ if (urlInterestParam === 'client' || urlInterestParam === 'partner') {
   window.history.replaceState({}, '', '/index.html');
 }
 if (new URLSearchParams(window.location.search).get('openModal') === '1') {
+  openedViaModalParam = true;
   openLeadModal('Страница технологии');
   window.history.replaceState({}, '', '/index.html');
 }
