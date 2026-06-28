@@ -755,6 +755,7 @@ function checkCustomMethod(){
   document.getElementById('m-method-custom').style.display = (method === 'Другой') ? 'block' : 'none';
 }
 let leadButtonSource = 'Не указан';
+let openedViaModalParam = false;
 function openLeadModal(buttonLabel){
   leadButtonSource = buttonLabel || 'Не указан';
   document.getElementById('leadModal').classList.add('open');
