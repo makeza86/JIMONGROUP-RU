@@ -768,6 +768,7 @@ const urlProductParam = new URLSearchParams(window.location.search).get('product
 if (urlInterestParam === 'client' || urlInterestParam === 'partner') {
   const prefix = urlProductParam ? urlProductParam : 'каталог';
   catalogInterestLabel = prefix + '-' + (urlInterestParam === 'client' ? 'клиент' : 'партнёр');
+  openedViaModalParam = true;
   openLeadModal('Каталог');
   window.history.replaceState({}, '', '/index.html');
 }
