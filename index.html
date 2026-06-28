@@ -776,6 +776,9 @@ if (new URLSearchParams(window.location.search).get('openModal') === '1') {
 }
 function closeLeadModal(){
   document.getElementById('leadModal').classList.remove('open');
+  if (new URLSearchParams(window.location.search).get('openModal') === '1' && document.referrer && document.referrer.includes(location.hostname)) {
+    location.href = document.referrer;
+  }
 }
 document.getElementById('leadModal').addEventListener('click', (e)=>{ if(e.target.id === 'leadModal') closeLeadModal(); });
 
