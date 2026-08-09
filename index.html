@@ -720,7 +720,16 @@ function sendToPeng(){
       localStorage.setItem(LANDING_LIMIT_KEY, new Date().toISOString().slice(0,10));
       showLandingLimitReached();
     } else {
-      addMsg('peng', data.reply || 'Извините, не получилось ответить.');
+      let replyText = data.reply || 'Извините, не получилось ответить.';
+      let action = null;
+      if (replyText.includes('[CATALOG]')) { action = 'catalog'; replyText = replyText.replace('[CATALOG]', '').trim(); }
+      else if (replyText.includes('[PARTNER]')) { action = 'partner'; replyText = replyText.replace('[PARTNER]', '').trim(); }
+      addMsg('peng', replyText);
+      if (action === 'catalog') {
+        addMsg('peng', '<a href="/catalog.html" class="btn-primary" style="text-decoration:none; display:inline-block; margin-top:6px; padding:10px 18px; font-size:0.85rem;">📖 Смотреть каталог</a>');
+      } else if (action === 'partner') {
+        addMsg('peng', '<a href="#" onclick="openLeadModal(\'Чат с Пэн\'); return false;" class="btn-primary" style="text-decoration:none; display:inline-block; margin-top:6px; padding:10px 18px; font-size:0.85rem;">✦ Стать партнёром</a>');
+      }
       if(badge) badge.textContent = 'Бесплатных вопросов: ' + (data.remaining ?? '—');
     }
   }).catch(() => {
