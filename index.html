@@ -677,10 +677,12 @@ const scriptedDialog = [
   { from:'peng', text:'Это моя работа и моя радость 💙 Присоединяйтесь к команде JimonGramm — и я с удовольствием продолжу с вами лично.' }
 ];
 let scriptIndex = 0;
+let realChatStarted = false;
 function nextScriptMsg(){
+  if(realChatStarted) return;
   if(scriptIndex >= scriptedDialog.length){ scriptIndex = 0; return; }
   const msg = scriptedDialog[scriptIndex++];
-  if(msg.from === 'peng'){ showTyping(); setTimeout(()=>{ removeTyping(); addMsg('peng', msg.text); setTimeout(nextScriptMsg, 3500); }, 1800); }
+  if(msg.from === 'peng'){ showTyping(); setTimeout(()=>{ if(realChatStarted) return; removeTyping(); addMsg('peng', msg.text); setTimeout(nextScriptMsg, 3500); }, 1800); }
   else { addMsg('user', msg.text); setTimeout(nextScriptMsg, 1400); }
 }
 if (localStorage.getItem('peng_landing_limit_date') !== new Date().toISOString().slice(0,10)) { setTimeout(nextScriptMsg, 1400); }
@@ -702,9 +704,14 @@ function sendToPeng(){
   const text = input.value.trim();
   if(!text) return;
   if(isLandingPengLimited()){
+    if(!realChatStarted){ realChatStarted = true; chat.innerHTML = ''; }
     showLandingLimitReached();
     input.value = '';
     return;
+  }
+  if(!realChatStarted){
+    realChatStarted = true;
+    chat.innerHTML = '';
   }
   addMsg('user', text);
   input.value = '';
