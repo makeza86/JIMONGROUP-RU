@@ -575,9 +575,13 @@
           </select>
           <input class="form-input modal-input" id="m-city-custom" placeholder="Укажите город" style="display:none; margin-top:8px;">
         </div>
-        <div class="form-field full">
+        <div class="form-field">
           <label class="form-label modal-label">Имя</label>
           <input class="form-input modal-input" id="m-name" placeholder="Ваше имя">
+        </div>
+        <div class="form-field">
+          <label class="form-label modal-label">Фамилия</label>
+          <input class="form-input modal-input" id="m-surname" placeholder="Ваша фамилия">
         </div>
         <div class="form-field">
           <label class="form-label modal-label">Код страны</label>
@@ -601,27 +605,21 @@
           <label class="form-label modal-label">Номер телефона</label>
           <input class="form-input modal-input" id="m-phone" placeholder="900 123 45 67">
         </div>
-        <div class="form-field full">
-          <label class="form-label modal-label">Способ связи</label>
-          <select class="form-input modal-input" id="m-method" onchange="checkCustomMethod()">
-            <option value="WhatsApp">WhatsApp</option>
-            <option value="Telegram">Telegram</option>
-            <option value="Max">Max</option>
-            <option value="Другой">Другой способ</option>
-          </select>
-          <input class="form-input modal-input" id="m-method-custom" placeholder="Укажите способ связи" style="display:none; margin-top:8px;">
-        </div>
       </div>
-      <button class="form-submit" onclick="submitLead()">Отправить заявку →</button>
+      <button class="form-submit" onclick="submitLead()">Продолжить →</button>
       <div class="form-note modal-note">Данные защищены и не передаются третьим лицам.</div>
     </div>
 
-    <div id="modalSuccessView" style="display:none; text-align:center;">
+    <div id="modalMessengerView" style="display:none; text-align:center;">
       <div class="form-success-icon">🎉</div>
-      <div class="form-success-title">Поздравляем — заявка принята!</div>
-      <p class="modal-success-text">Официальный менеджер вашего региона свяжется с вами в ближайшее время.</p>
-      <p class="modal-success-wish">Желаем вам крепкого здоровья и успешного старта в команде JIMON GROUP 🌿</p>
-      <button class="btn-secondary" style="margin-top:20px; border:none; cursor:pointer;" onclick="closeLeadModal()">Продолжить на сайте</button>
+      <div class="form-success-title">Отлично, осталось написать нам!</div>
+      <p class="modal-success-text">Мы работаем напрямую с лидером команды — из-за особенностей номера он пока не может написать первым. Нажмите на кнопку ниже, откроется мессенджер с готовым сообщением — просто отправьте его 😊</p>
+      <div class="messenger-btns" style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
+        <a id="m-whatsapp-link" href="#" target="_blank" class="btn-primary" style="text-decoration:none; display:block;">📱 Написать в WhatsApp</a>
+        <a id="m-max-link" href="#" target="_blank" class="btn-secondary" style="text-decoration:none; display:block; border:none; cursor:pointer;">💬 Написать в MAX</a>
+      </div>
+      <p class="modal-success-wish" style="margin-top:16px;">Желаем вам крепкого здоровья и успешного старта в команде JIMON GROUP 🌿</p>
+      <button class="btn-secondary" style="margin-top:20px; border:none; cursor:pointer; background:none;" onclick="closeLeadModal()">Продолжить на сайте</button>
     </div>
   </div>
 </div>
@@ -646,6 +644,7 @@
 const CONFIG = {
   region: "Россия",
   leadSource: "jimon-group.ru",
+  maxLink: "https://max.ru/u/f9LHodD0cOKnHRZnfCYKMqkxpgnByIZTcAc7JrC-EhSDi47lkK787lvsYjE",
   socials: [
     { label:"TikTok", url:"https://www.tiktok.com/@jimongroup.ai" },
     { label: "Instagram", url: "https://www.instagram.com/jimongroup.gramm" },
@@ -750,17 +749,13 @@ function checkCustomCity(){
   const city = document.getElementById('m-city').value;
   document.getElementById('m-city-custom').style.display = (city === 'Другой город') ? 'block' : 'none';
 }
-function checkCustomMethod(){
-  const method = document.getElementById('m-method').value;
-  document.getElementById('m-method-custom').style.display = (method === 'Другой') ? 'block' : 'none';
-}
 let leadButtonSource = 'Не указан';
 let openedViaModalParam = false;
 function openLeadModal(buttonLabel){
   leadButtonSource = buttonLabel || 'Не указан';
   document.getElementById('leadModal').classList.add('open');
   document.getElementById('modalFormView').style.display = 'block';
-  document.getElementById('modalSuccessView').style.display = 'none';
+  document.getElementById('modalMessengerView').style.display = 'none';
 }
 let catalogInterestLabel = '';
 const urlInterestParam = new URLSearchParams(window.location.search).get('interest');
@@ -794,25 +789,29 @@ async function submitLead(){
   if(city === 'Другой город') city = document.getElementById('m-city-custom').value.trim() || city;
 
   const name = document.getElementById('m-name').value.trim();
+  const surname = document.getElementById('m-surname').value.trim();
+  const fullName = (name + ' ' + surname).trim();
   const phoneCode = document.getElementById('m-phone-code').value.replace('kz','');
   const phone = document.getElementById('m-phone').value.trim();
   const contact = phoneCode + ' ' + phone;
 
-  let method = document.getElementById('m-method').value;
-  if(method === 'Другой') method = document.getElementById('m-method-custom').value.trim() || method;
-
-  if(!country || !city || !name || !phone){ alert('Пожалуйста, заполните все поля.'); return; }
+  if(!country || !city || !name || !surname || !phone){ alert('Пожалуйста, заполните все поля.'); return; }
   const btn = document.querySelector('#modalFormView .form-submit');
-  btn.textContent = 'Отправляем...'; btn.disabled = true;
+  btn.textContent = 'Секунду...'; btn.disabled = true;
   try{
-    await fetch('https://jimongramm.com/api/landing-lead',{
+    fetch('https://jimongramm.com/api/landing-lead',{
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ name, city, contact, contactMethod:method, country, source: CONFIG.leadSource + ' — ' + (interestLabel || leadButtonSource) })
-    });
+      body: JSON.stringify({ name: fullName, city, contact, contactMethod:'—', country, source: CONFIG.leadSource + ' — ' + (interestLabel || leadButtonSource) })
+    }).catch(()=>{});
   }catch(e){}
+
+  const waText = encodeURIComponent(`Здравствуйте! Меня зовут ${fullName}, ${city}, ${country}. Хочу стать партнёром JIMON GROUP.`);
+  document.getElementById('m-whatsapp-link').href = `https://wa.me/77085080130?text=${waText}`;
+  document.getElementById('m-max-link').href = CONFIG.maxLink;
+
   document.getElementById('modalFormView').style.display = 'none';
-  document.getElementById('modalSuccessView').style.display = 'block';
-  btn.textContent = 'Отправить заявку →'; btn.disabled = false;
+  document.getElementById('modalMessengerView').style.display = 'block';
+  btn.textContent = 'Продолжить →'; btn.disabled = false;
 }
 function toggleContactMenu(){
   document.getElementById('contactMenu').classList.toggle('open');
