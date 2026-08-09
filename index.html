@@ -453,7 +453,7 @@
           <input type="text" id="pengRealInput" class="chat-input-fake" placeholder="Расскажите, что вас беспокоит..." style="border:none; outline:none; font-family:inherit;" onkeypress="if(event.key==='Enter') sendToPeng()">
           <button class="chat-send-btn" onclick="sendToPeng()">→</button>
         </div>
-        <div id="pengLimitBadge" style="text-align:center; font-size:0.75rem; color:rgba(250,246,236,0.4); margin-top:8px;">Бесплатных вопросов: 3</div>
+        <div id="pengLimitBadge" style="text-align:center; font-size:0.75rem; color:rgba(250,246,236,0.4); margin-top:8px;">Бесплатных вопросов: 10</div>
       </div>
     </div>
 
@@ -683,30 +683,52 @@ function nextScriptMsg(){
   if(msg.from === 'peng'){ showTyping(); setTimeout(()=>{ removeTyping(); addMsg('peng', msg.text); setTimeout(nextScriptMsg, 3500); }, 1800); }
   else { addMsg('user', msg.text); setTimeout(nextScriptMsg, 1400); }
 }
-setTimeout(nextScriptMsg, 1400);
+if (localStorage.getItem('peng_landing_limit_date') !== new Date().toISOString().slice(0,10)) { setTimeout(nextScriptMsg, 1400); }
 
 /* ===== РЕАЛЬНЫЙ ВВОД ПОСЕТИТЕЛЯ В ЧАТЕ ===== */
-let pengFreeQuestionsLeft = 3;
+const LANDING_LIMIT_KEY = 'peng_landing_limit_date';
+function isLandingPengLimited(){
+  return localStorage.getItem(LANDING_LIMIT_KEY) === new Date().toISOString().slice(0,10);
+}
+function showLandingLimitReached(){
+  const badge = document.getElementById('pengLimitBadge');
+  if(badge) badge.textContent = 'Лимит на сегодня исчерпан';
+  document.querySelector('.chat-input-row').style.display = 'none';
+  const waText = encodeURIComponent('Здравствуйте! Хочу узнать больше про JIMON GROUP и стать партнёром.');
+  addMsg('peng', `Вы использовали 10 бесплатных вопросов на сегодня 🌿 Дальше лучше написать напрямую — отвечу быстрее в мессенджере:<br><br><a href="https://wa.me/77085080130?text=${waText}" target="_blank" class="btn-primary" style="text-decoration:none; display:inline-block; margin:6px 6px 0 0; padding:10px 18px; font-size:0.85rem;">📱 WhatsApp</a><a href="${CONFIG.maxLink}" target="_blank" class="btn-secondary" style="text-decoration:none; display:inline-block; margin:6px 0 0; padding:10px 18px; font-size:0.85rem; border:none;">💬 MAX</a>`);
+}
 function sendToPeng(){
   const input = document.getElementById('pengRealInput');
   const text = input.value.trim();
   if(!text) return;
+  if(isLandingPengLimited()){
+    showLandingLimitReached();
+    input.value = '';
+    return;
+  }
   addMsg('user', text);
   input.value = '';
+  input.disabled = true;
   const badge = document.getElementById('pengLimitBadge');
-  if(pengFreeQuestionsLeft > 0){
-    pengFreeQuestionsLeft--;
-    if(badge) badge.textContent = 'Бесплатных вопросов: ' + pengFreeQuestionsLeft;
-    showTyping();
-    setTimeout(()=>{
-      removeTyping();
-      addMsg('peng', 'Спасибо за вопрос 🌿 Чтобы получить полный персональный разбор от Пэн — оставьте заявку, и куратор подключит вас в приложении JimonGramm.');
-    }, 1600);
-  } else {
-    addMsg('peng', 'Бесплатные вопросы закончились 🙏 Оставьте заявку — куратор откроет вам полный доступ к Пэн.');
-    openLeadModal('Чат с Пэн');
-  }
+  showTyping();
+  fetch('https://jimongramm.com/api/landing-peng', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ message: text })
+  }).then(r => r.json()).then(data => {
+    removeTyping();
+    if(data.limitReached){
+      localStorage.setItem(LANDING_LIMIT_KEY, new Date().toISOString().slice(0,10));
+      showLandingLimitReached();
+    } else {
+      addMsg('peng', data.reply || 'Извините, не получилось ответить.');
+      if(badge) badge.textContent = 'Бесплатных вопросов: ' + (data.remaining ?? '—');
+    }
+  }).catch(() => {
+    removeTyping();
+    addMsg('peng', 'Извините, произошла ошибка соединения. Попробуйте ещё раз.');
+  }).finally(() => { input.disabled = false; input.focus(); });
 }
+if (isLandingPengLimited()) { showLandingLimitReached(); }
 
 function toggleFaq(el){
   const item=el.parentElement; const isOpen=item.classList.contains('open');
