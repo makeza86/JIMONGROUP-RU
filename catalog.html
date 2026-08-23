@@ -1007,6 +1007,7 @@ function toggleDesc(el){
 // ===== МОДАЛЬНОЕ ОКНО ЧАТА С ПЭН =====
 let pengModalHistory = [];
 let pengModalProductContext = '';
+let pengModalProductKey = '';
 
 const CATALOG_LIMIT_KEY = 'peng_catalog_limit_date';
 function isCatalogPengLimited(){
@@ -1029,6 +1030,7 @@ function openPengModalByKey(btn){
   const key = btn.getAttribute('data-key');
   const p = ALL_ITEMS[key];
   if(!p) return;
+  pengModalProductKey = key;
   openPengModal(p.brand, p.desc);
 }
 
@@ -1089,7 +1091,7 @@ async function sendCatalogPeng(){
   try{
     const res = await fetch('https://jimongramm.com/api/catalog-peng', {
       method: 'POST', headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ message: text, productContext: pengModalProductContext, history: pengModalHistory })
+      body: JSON.stringify({ message: text, productContext: pengModalProductContext, productKey: pengModalProductKey, history: pengModalHistory })
     });
     const data = await res.json();
     removePmTyping();
