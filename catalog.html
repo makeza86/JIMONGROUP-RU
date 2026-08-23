@@ -87,9 +87,11 @@
   .fcard-usage{font-size:0.78rem; color:var(--text2); line-height:1.6;}
   .fcard-warning{margin-top:14px; padding:12px 14px; background:rgba(212,168,76,0.06); border:1px solid rgba(212,168,76,0.2); border-radius:10px; font-size:0.7rem; color:var(--text2); line-height:1.55;}
   .fcard-warning b{color:var(--gold-light);}
-  .fcard-actions{display:flex; gap:8px; margin-top:16px;}
-  .fcard-actions .pcard-more{flex:1; text-align:center; padding:9px; border-radius:10px; background:rgba(212,168,76,0.08); border:1px solid rgba(212,168,76,0.2); font-size:0.78rem; text-decoration:none; color:var(--gold-light); cursor:pointer;}
-  .fcard-actions .pcard-ask{flex:1; text-align:center; padding:9px; font-size:0.78rem;}
+  .fcard-actions{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:16px;}
+  .fcard-actions .pcard-more{font-size:0.72rem; color:rgba(148,163,184,0.55); text-decoration:underline; text-decoration-color:rgba(148,163,184,0.3); cursor:pointer; background:none; border:none; padding:4px 0;}
+  .fcard-actions .pcard-more:hover{color:var(--gold);}
+  .fcard-actions .pcard-ask{flex-shrink:0; padding:10px 18px; font-size:0.8rem; font-weight:800; color:#1a1200; background:linear-gradient(135deg,#f0c94a,#e0a92f); border:none; border-radius:10px; cursor:pointer; box-shadow:0 2px 8px rgba(224,169,47,0.35);}
+  .fcard-actions .pcard-ask:hover{filter:brightness(1.08);}
 
   h2.section-h{font-family:'Noto Serif SC',serif; color:var(--gold-light); font-size:1.4rem; margin:50px 0 6px; text-align:center;}
   .section-sub-h{text-align:center; color:var(--text2); font-size:0.92rem; margin-bottom:24px;}
