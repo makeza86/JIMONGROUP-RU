@@ -6,4 +6,41 @@ User-agent: Yandex
 Allow: /
 Disallow: /privacy.html
 
+User-agent: GPTBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://jimon-group.ru/sitemap.xml
