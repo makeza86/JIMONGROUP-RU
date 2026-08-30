@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-08-30 03:26">
+<yml_catalog date="2026-08-30 03:34">
   <shop>
     <name>JIMON GROUP</name>
     <company>JIMON GROUP</company>
@@ -17,7 +17,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-1.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Роскошная массажная маска для сияния и упругости кожи. Глубоко увлажняет, повышает эластичность, дарит естественное сияние и восстанавливает кожу. Натуральные эфирные масла и экстракты работают в синергии — для свежего, ухоженного и молодого вида каждый день.</description>
       </offer>
       <offer id="2" available="true">
@@ -26,7 +25,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-2.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Нежный очищающий мёд-гель для ежедневного умывания. Мягко удаляет загрязнения, себум и остатки макияжа, не нарушая защитный барьер кожи. Сохраняет увлажнённость, не вызывает чувства стянутости и идеально подходит даже для чувствительной кожи. Для свежего, чистого и ухоженного лица каждое утро и вечер.</description>
       </offer>
       <offer id="3" available="true">
@@ -35,7 +33,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-3.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Мгновенный омолаживающий лифтинг-спрей для лица. Глубоко увлажняет, повышает упругость и эластичность, помогает разгладить мелкие морщины и поддерживает защитный барьер кожи. Лёгкая текстура с мощными пептидами и гиалуроновой кислотой — для свежего, подтянутого и сияющего лица в течение всего дня.</description>
       </offer>
       <offer id="4" available="true">
@@ -44,7 +41,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-4.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Роскошное моделирующее масло-эликсир для омоложения кожи. Повышает упругость и эластичность, интенсивно увлажняет и питает, выравнивает тон и улучшает текстуру. Укрепляет защитный барьер кожи. Мощные пептиды, рекомбинантный эластин и растительные экстракты — для заметно подтянутой, сияющей и ухоженной кожи.</description>
       </offer>
       <offer id="5" available="true">
@@ -53,7 +49,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-5.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Интенсивная сыворотка для нежной кожи вокруг глаз. Смягчает мелкие морщины и «гусиные лапки», уменьшает отёчность, осветляет тон и придаёт сияние. Успокаивает и укрепляет барьер кожи. Керамический аппликатор с охлаждающим эффектом — для свежего, отдохнувшего взгляда каждый день.</description>
       </offer>
       <offer id="6" available="true">
@@ -62,7 +57,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-6.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Полная антивозрастная система ухода на основе гидролизованного экстракта красного риса премиум-класса. Восстанавливает сияние, повышает упругость, глубоко питает и защищает кожу. Китайская растительная философия + современные активные компоненты — для гармоничной, молодой и ухоженной кожи каждый день.</description>
       </offer>
       <offer id="7" available="true">
@@ -71,7 +65,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-7.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Интенсивный лифтинг-крем с коллагеном для заметного омоложения кожи. Улучшает упругость и эластичность, визуально разглаживает мелкие морщины, глубоко питает и увлажняет. Устраняет сухость и тусклость тона. Герметичная вакуумная упаковка сохраняет свежесть и эффективность формулы.</description>
       </offer>
       <offer id="8" available="true">
@@ -80,7 +73,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-8.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Лёгкий спрей-мист для мгновенного увлажнения и подтяжки кожи. Устраняет сухость, восстанавливает упругость, дарит антивозрастной эффект и свежесть. Гиалуроновая кислота, ниацинамид и пептиды работают в синергии — для ухоженного, сияющего лица в течение всего дня. Подходит для всех типов кожи.</description>
       </offer>
       <offer id="9" available="true">
@@ -89,7 +81,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-9.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Надёжная защита от солнца с высоким фактором SPF 50+ PA++++. Эффективно блокирует UVA и UVB-лучи, поддерживает увлажнённость кожи и предотвращает сухость. Лёгкая текстура комфортно распределяется и может использоваться как база под макияж. Для ежедневной защиты и здорового сияния кожи.</description>
       </offer>
       <offer id="10" available="true">
@@ -98,7 +89,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-10.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный продукт на основе листа лотоса и боярышника. Эффективно улучшает пищеварение, помогает контролировать вес, мягко очищает организм и поддерживает здоровый обмен веществ. Богатый растительный состав для ежедневной лёгкости и заботы о здоровье.</description>
       </offer>
       <offer id="11" available="true">
@@ -107,7 +97,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-11.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный продукт на основе фруктово-овощных порошков, женьшеня и суперфудов. Помогает контролировать вес, регулирует жировой и углеводный обмен, снижает тягу к перееданию и продлевает чувство сытости. Дарит лёгкость и энергию каждый день. Богатый растительный состав без лишнего сахара — для стройности, тонуса и ежедневной заботы о себе.</description>
       </offer>
       <offer id="12" available="true">
@@ -116,7 +105,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-12.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный продукт на основе ашитабы и натто. Стабилизирует давление и нормализует сахар в крови. Поддерживает здоровое кровообращение, очищает сосуды, помогает нормализовать обмен веществ и повышает общий тонус организма. Богатый растительный состав для ежедневной заботы о здоровье.</description>
       </offer>
       <offer id="13" available="true">
@@ -125,7 +113,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-13.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный продукт на основе семян льна и коллагеновых пептидов. Поддерживает упругость и эластичность кожи, укрепляет волосы и ногти, поддерживает пищеварение и работу кишечника, способствует нормализации обмена веществ, помогает поддерживать чувство сытости. Источник растительного белка и клетчатки — для красоты, лёгкости и ежедневной заботы о здоровье.</description>
       </offer>
       <offer id="14" available="true">
@@ -134,7 +121,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-14.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный продукт на основе высококачественных коллагеновых пептидов. Поддерживает упругость и эластичность кожи, способствует увлажнению кожи изнутри, поддерживает здоровье волос и ногтей. Легко усваивается, приятный вкус — для ежедневной заботы о красоте и молодости.</description>
       </offer>
       <offer id="15" available="true">
@@ -143,7 +129,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-15.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральная питательная основа для здоровья суставов и костей. Поддерживает подвижность и комфорт суставов, способствует укреплению костной ткани, помогает снизить ощущение скованности и поддерживает соединительную ткань и хрящ. Для ежедневной лёгкости движений и заботы об опорно-двигательном аппарате.</description>
       </offer>
       <offer id="16" available="true">
@@ -152,7 +137,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-16.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Удобные прессованные конфеты на основе экстракта женьшеня и хуанцзин. Поддерживают уровень энергии и работоспособность, помогают снизить ощущение усталости и способствуют укреплению иммунитета. Приятный формат — просто рассосите 1–2 таблетки в день для ежедневной бодрости и тонуса.</description>
       </offer>
       <offer id="17" available="true">
@@ -161,7 +145,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-17.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Мощная поддержка мозга и нервной системы. Богаты нервоновой кислотой из масла семян клёна — ключевым компонентом для ясности мышления, концентрации и защиты нейронов. Помогают сохранять остроту ума, снижают умственную усталость и поддерживают работу нервной системы каждый день. Удобный формат без сахара — для тех, кто ценит ясный ум и продуктивность.</description>
       </offer>
       <offer id="18" available="true">
@@ -170,7 +153,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-18.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный напиток на основе пептида печёночного белка и экстракта корня куркумы. Поддерживает работу печени, способствует естественному очищению организма, помогает снизить ощущение тяжести после еды и поддерживает обмен веществ. Для ежедневной заботы о печени и лёгкости.</description>
       </offer>
       <offer id="19" available="true">
@@ -179,7 +161,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-19.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный растительный напиток для комфорта горла и голосовых связок. Смягчает ощущение сухости и першения, поддерживает комфорт при повышенной голосовой нагрузке, освежает и оставляет чувство лёгкости. Идеально для ежедневной заботы о голосе и горле.</description>
       </offer>
       <offer id="20" available="true">
@@ -188,7 +169,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-20.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный питательный напиток для красоты кожи изнутри. Поддерживает упругость и увлажнённость, способствует ровному тону и естественному сиянию, помогает уменьшить ощущение сухости. Растительные компоненты работают на обновление кожи — для свежего, здорового и сияющего вида каждый день.</description>
       </offer>
       <offer id="21" available="true">
@@ -197,7 +177,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-21.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный растительный напиток на основе экстракта плода монаха (архата). Мягко поддерживает работу желудка и пищеварения, снимает ощущение тяжести после еды, увлажняет и смягчает сухость в горле. Освежает, дарит лёгкость и комфорт. Готовый к употреблению напиток без необходимости разведения — идеальный ежедневный ритуал заботы о пищеварении и горле.</description>
       </offer>
       <offer id="22" available="true">
@@ -206,7 +185,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-22.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный напиток на основе дендробиума и ростков женьшеня. Поддерживает уровень энергии и жизненный тонус, способствует увлажнению организма изнутри, помогает снизить ощущение усталости и поддерживает иммунитет. Для ежедневной бодрости и восстановления сил.</description>
       </offer>
       <offer id="23" available="true">
@@ -215,7 +193,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-23.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Удобные прессованные конфеты на основе экстракта корня цикория. Поддерживают естественные защитные силы организма, способствуют нормализации обмена веществ и помогают поддерживать уровень энергии. Приятный формат — просто рассосите 1–2 таблетки в день для ежедневной заботы о здоровье.</description>
       </offer>
       <offer id="24" available="true">
@@ -224,7 +201,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-24.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный порошок на основе экстракта корня цикория и инулина. Поддерживает естественные защитные силы организма, способствует здоровой микрофлоре кишечника, помогает поддерживать уровень энергии. Богатый источник растительной клетчатки — для ежедневной заботы о здоровье изнутри.</description>
       </offer>
       <offer id="25" available="true">
@@ -233,7 +209,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-25.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Инновационные таблетки на основе пептида бычьего костного мозга. Поддерживают костную ткань и суставы, помогают быстрее восстанавливаться после нагрузок и поддерживать высокий уровень энергии. Удобный формат — для ежедневной заботы о здоровье изнутри.</description>
       </offer>
       <offer id="26" available="true">
@@ -242,7 +217,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-26.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Инновационный продукт на основе пептида бычьего костного мозга, который биологически близок к человеческому. Укрепляет костную ткань и суставы, повышает иммунитет, помогает быстрее восстанавливаться после нагрузок. Забота о здоровье изнутри каждый день.</description>
       </offer>
       <offer id="27" available="true">
@@ -251,7 +225,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-27.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Нежное растительное средство для ежедневного интимного ухода. Поддерживает естественный баланс микрофлоры, сохраняет ощущение свежести и комфорта, мягко ухаживает за чувствительной кожей. Натуральные экстракты шафрана, лаванды и шалфея — для уверенности и заботы о женском здоровье каждый день.</description>
       </offer>
       <offer id="28" available="true">
@@ -260,7 +233,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-28.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Нежное растительное средство для ежедневного ухода за нежной кожей вокруг глаз. Снимает ощущение сухости и напряжения, улучшает микроциркуляцию, помогает уменьшить тёмные круги и отёчность. Натуральные экстракты работают бережно и эффективно — для свежего, отдохнувшего взгляда каждый день.</description>
       </offer>
       <offer id="29" available="true">
@@ -269,7 +241,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-29.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Натуральный нефритовый порошок для согревающих ножных ванн. Способствует согреванию тела, снижает ощущение холода и зябкости в ногах, помогает глубоко расслабиться после долгого дня. Возвращает ощущение лёгкости и комфорта — идеальный ритуал для вечернего восстановления.</description>
       </offer>
       <offer id="30" available="true">
@@ -278,7 +249,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-30.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Уникальный массажный крем двойного действия с мощным растительным комплексом. Снижает ощущение дискомфорта в мышцах и суставах, сочетает согревающий и освежающий эффект, способствует глубокому расслаблению после нагрузок. Улучшает подвижность и возвращает комфорт телу — для активного образа жизни и ежедневного восстановления.</description>
       </offer>
       <offer id="31" available="true">
@@ -287,7 +257,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-31.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Мощный комплекс «Фигура A» с ключевым акцентом на энергию и тонус. Женьшень и Хуанцзин поддерживают уровень энергии, работоспособность и общий тонус организма — помогают справляться с усталостью и сохранять активность в течение дня. Вместе с Бирюкангом (мягкий детокс), Жиротопом (контроль аппетита), льняной кашей и коллагеновыми пептидами комплекс даёт видимый результат: больше энергии, меньше тяжести в теле и собранная фигура каждый день. Решение «под ключ» для тех, кто хочет не просто минус объёмы, а бодрость, тонус и лёгкость без жёстких диет.</description>
       </offer>
       <offer id="32" available="true">
@@ -296,7 +265,6 @@
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://jimon-group.ru/images/product-32.jpg</picture>
-        <url>https://jimon-group.ru/catalog.html</url>
         <description>Мощный комплекс «Фигура B» с ключевым акцентом на Кровочистку. Сюэланьдо работает с сердцем, сосудами и микроциркуляцией — уменьшает отёчность, снимает тяжесть в ногах и помогает «очистить» кровоток. Вместе с Бирюкангом (мягкий детокс), Жиротопом (контроль аппетита), льняной кашей и коллагеновыми пептидами комплекс даёт видимый результат: более подтянутый контур, лёгкость в теле и комфорт каждый день. Решение «под ключ» для тех, кто хочет чистые сосуды, меньше отёков и собранную фигуру без жёстких диет.</description>
       </offer>
     </offers>
